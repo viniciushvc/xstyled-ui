@@ -41,7 +41,12 @@ const ComponentsPage = () => {
             </x.p>
           </x.div>
 
-          <x.div display="grid" gridTemplateColumns={3} gap={5} mt={10}>
+          <x.div
+            display="grid"
+            gridTemplateColumns={{ _: 1, sm: 2, md: 3 }}
+            gap={5}
+            mt={10}
+          >
             {items.map((item, index) => (
               <Link key={item.title} href="#" passHref>
                 <x.a color="text">
