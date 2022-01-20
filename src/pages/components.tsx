@@ -25,8 +25,8 @@ const ComponentsPage = () => {
           </x.h1>
 
           <x.p fontSize="xl">
-            If you use Chakra UI, this is the next level. With Pro, we&apos;ve
-            put in the work to create high-quality components.
+            If you use xStyled, this is the next level. With Pro, we&apos;ve put
+            in the work to create high-quality components.
           </x.p>
 
           <x.div display="grid" gridTemplateColumns={3} gap={5}>
