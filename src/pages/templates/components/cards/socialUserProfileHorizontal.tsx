@@ -43,7 +43,7 @@ export default function socialProfileWithImageHorizontal() {
           <Heading fontSize={'2xl'} fontFamily={'body'}>
             Lindsey James
           </Heading>
-          <Text fontWeight={600} color={'gray.500'} size="sm" mb={4}>
+          <Text fontWeight={600} color={'gray.500'} fontSize="sm" mb={4}>
             @lindsey_jam3s
           </Text>
           <Text textAlign={'center'} color="gray.700" px={3}>
