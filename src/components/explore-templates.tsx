@@ -1,17 +1,22 @@
-import { x } from '@xstyled/styled-components'
 import Link from 'next/link'
 
-import { IoArrowForward } from 'react-icons/io5'
-import { Button } from './button'
+import { x } from '@xstyled/styled-components'
 
-import { Container } from './container'
+import { IoArrowForward } from 'react-icons/io5'
+
+import { useColorModeValue } from 'hooks/use-color-mode'
+
+import { Button } from '@/components/button'
+import { Container } from '@/components/container'
 
 export const ExploreTemplates = () => {
+  const bgColor = useColorModeValue('primary-700-a60', 'primary-500-a30')
+
   return (
-    <x.div bg="bg">
+    <x.div>
       <Container py={{ _: 14, sm: 20, md: 32 }}>
         <x.div
-          bg="red-500-a30"
+          bg={bgColor}
           borderRadius="xl"
           color="white"
           px={{ _: 4, md: 10 }}

@@ -28,9 +28,9 @@ const NavigationLink = ({
         ml={'-12px!important'}
         bg={isActive ? activeBg : undefined}
         fontWeight={isActive ? 600 : 400}
-        color={isActive ? 'red-500' : 'blue-500'}
+        color={isActive ? 'primary-500' : 'blue-500'}
         _hover={{
-          bg: isActive ? activeBg : 'red-500'
+          bg: isActive ? activeBg : 'primary-500'
         }}
       >
         {children}
@@ -41,7 +41,7 @@ const NavigationLink = ({
 
 export const Navigation = (props: SystemProps) => {
   const { asPath } = useRouter()
-  const categoryColor = 'red-500'
+  const categoryColor = 'primary-500'
 
   return (
     <x.div
@@ -76,7 +76,8 @@ export const Navigation = (props: SystemProps) => {
           </x.div>
         </x.div>
       ))}
-      <x.div spaceX={2} bg="bg" rounded={'md'} p={{ base: 4 }}>
+
+      <x.div spaceX={2} rounded={'md'} p={{ base: 4 }}>
         <x.p fontWeight={700} fontSize={'sm'}>
           These are not the templates you are looking for?
         </x.p>

@@ -4,6 +4,7 @@ import { SystemProps, x } from '@xstyled/styled-components'
 
 import { Container } from '@/components/container'
 import { Button } from '@/components/button'
+import { useColorModeValue } from 'hooks/use-color-mode'
 
 export const Hero = ({ ...props }: SystemProps) => {
   return (
@@ -11,7 +12,6 @@ export const Hero = ({ ...props }: SystemProps) => {
       display="flex"
       alignItems="center"
       h={{ _: '100%', lg: 'calc(100vh - 80px)' }}
-      bg="bg"
       py={10}
       {...props}
     >
@@ -23,7 +23,7 @@ export const Hero = ({ ...props }: SystemProps) => {
             fontWeight="bold"
             maxW="2xl"
           >
-            <x.u color="red-500">Production-ready</x.u> xStyled UI for
+            <x.u color="primary-500">Production-ready</x.u> xStyled UI for
             developers
           </x.h2>
 
@@ -33,12 +33,13 @@ export const Hero = ({ ...props }: SystemProps) => {
           </x.p>
 
           <x.div display="flex" spaceX={{ _: 6, sm: 12 }}>
-            <x.ul spaceY={4} color="text">
+            <x.ul color="text" listStyle="inside" spaceY={4}>
               <x.li>Responsive Demos</x.li>
               <x.li>Easy Customizable</x.li>
               <x.li>Written in Typescript</x.li>
             </x.ul>
-            <x.ul spaceY={4} color="text">
+
+            <x.ul color="text" listStyle="inside" spaceY={4}>
               <x.li>100% Open Source</x.li>
               <x.li>1 Templates</x.li>
               <x.li>2 Categories</x.li>
@@ -57,10 +58,11 @@ export const Hero = ({ ...props }: SystemProps) => {
 
             <Button
               as="a"
+              color={useColorModeValue('gray-700', 'white')}
               href="https://xstyled.dev"
               target="_blank"
               rel="noopener noreferrer"
-              bg={{ _: 'transparent', hover: 'red-600-a20' }}
+              bg={{ _: 'transparent', hover: 'primary-600-a20' }}
             >
               Suggest Template
             </Button>

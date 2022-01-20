@@ -18,7 +18,7 @@ const STEPS = [
 
 export const GettingStarted = () => {
   return (
-    <x.section bg="bg" py={10}>
+    <x.section py={10}>
       <Container>
         <x.h3
           fontSize={{ _: 'xl', md: '3xl' }}
@@ -26,7 +26,7 @@ export const GettingStarted = () => {
           color="text"
           textAlign="center"
         >
-          Getting started in <x.u color="red-500">3 easy steps</x.u>
+          Getting started in <x.u color="primary-500">3 easy steps</x.u>
         </x.h3>
 
         <x.div
@@ -52,7 +52,7 @@ export const GettingStarted = () => {
                 display="flex"
                 w="40px"
                 h="40px"
-                bg="red-500"
+                bg="primary-500"
                 color="white"
                 fontWeight="bold"
                 alignItems="center"

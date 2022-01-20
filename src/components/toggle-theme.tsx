@@ -8,7 +8,7 @@ export const ToggleTheme = ({ ...props }: SystemProps) => {
   return (
     <x.button
       appearance="none"
-      color={{ _: 'currentColor', hover: 'red-500' }}
+      color={{ _: 'currentColor', hover: 'primary-500' }}
       bg="transparent"
       onClick={() => {
         setColorMode(colorMode === 'default' ? 'dark' : 'default')

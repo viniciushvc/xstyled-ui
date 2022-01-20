@@ -23,16 +23,14 @@ function App({ Component, pageProps }: AppProps) {
 
         <GlobalStyles />
 
-        <ChakraProvider theme={oldTheme}>
-          <Head>
-            <title>xStyled UI</title>
-            <link rel="manifest" href="/manifest.json" />
-            <meta name="theme-color" content="#06092B" />
-            <meta name="description" content="xStyled UI" />
-          </Head>
+        <Head>
+          <title>xStyled UI</title>
+          <link rel="manifest" href="/manifest.json" />
+          <meta name="theme-color" content="#06092B" />
+          <meta name="description" content="xStyled UI" />
+        </Head>
 
-          <Component {...pageProps} />
-        </ChakraProvider>
+        <Component {...pageProps} />
       </ColorModeProvider>
     </ThemeProvider>
   )

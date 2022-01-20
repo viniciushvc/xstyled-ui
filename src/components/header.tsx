@@ -4,9 +4,15 @@ import { x } from '@xstyled/styled-components'
 
 import { ToggleTheme } from './toggle-theme'
 
+import { useColorModeValue } from 'hooks/use-color-mode'
+
 export const Header = () => {
+  const bgColor = useColorModeValue('gray-100', 'gray-900')
+
+  const textColor = useColorModeValue('gray-700', 'gray-300')
+
   return (
-    <x.header bg="bg">
+    <x.header bg={bgColor}>
       <x.div container mx="auto" px={3}>
         <x.nav
           display="flex"
@@ -15,7 +21,7 @@ export const Header = () => {
           alignItems="center"
         >
           <Link href="/" passHref>
-            <x.a color="white">
+            <x.a color={textColor}>
               <x.span fontSize="xl" fontWeight="medium">
                 xStyled UI
               </x.span>
@@ -25,12 +31,14 @@ export const Header = () => {
           <x.ul
             display={{ _: 'none', md: 'flex' }}
             alignItems="center"
-            color="text"
+            color={textColor}
             gap={5}
           >
             <x.li fontWeight="medium">
               <Link href="/components" passHref>
-                <x.a color={{ hover: 'red-500' }}>Components</x.a>
+                <x.a color={{ _: 'currentColor', hover: 'primary-500' }}>
+                  Components
+                </x.a>
               </Link>
             </x.li>
 
@@ -39,7 +47,7 @@ export const Header = () => {
                 href="https://github.com/gregberge/xstyled"
                 target="_blank"
                 rel="noopener noreferrer"
-                color={{ hover: 'red-500' }}
+                color={{ _: 'currentColor', hover: 'primary-500' }}
               >
                 Github
               </x.a>

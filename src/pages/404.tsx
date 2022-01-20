@@ -15,7 +15,6 @@ export const NotFound = () => {
       w="full"
     >
       <x.div
-        bg="bg"
         borderRadius="xl"
         p={8}
         spaceX={6}

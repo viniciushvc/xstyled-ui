@@ -17,7 +17,7 @@ export const Button = ({ as, children, ...props }: ButtonProps) => {
       alignItems="center"
       h="50px"
       color="white"
-      bg={{ _: 'red-500', hover: 'red-600' }}
+      bg={{ _: 'primary-500', hover: 'primary-600' }}
       borderRadius="md"
       px={5}
       transition
