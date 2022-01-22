@@ -4,12 +4,15 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 
 import { x } from '@xstyled/styled-components'
 
+import { DefaultLayout } from '@/layout/default'
+
 import { Container } from '@/components/layout/container'
 
 import { Example } from '@/features/components/example'
 
 import { data } from 'data'
 import { Category, SubCategory, Template } from '../data/types'
+import { NextSeo } from 'next-seo'
 
 type PageProps = {
   category: Category
@@ -23,28 +26,34 @@ const TemplatesPage: NextPage<PageProps> = ({
   templates
 }) => {
   return (
-    <Container my={20}>
-      <x.div mb={10}>
-        <x.h1 fontSize="3xl" fontWeight="bold">
-          {subCategory.name}
-        </x.h1>
+    <>
+      <NextSeo title={subCategory.name} />
 
-        {subCategory.description && (
-          <x.p color={'gray-600'}>{subCategory.description}</x.p>
-        )}
-      </x.div>
+      <DefaultLayout>
+        <Container my={20}>
+          <x.div mb={10}>
+            <x.h1 fontSize="3xl" fontWeight="bold">
+              {subCategory.name}
+            </x.h1>
 
-      <x.div spaceY={12}>
-        {templates?.map((template) => (
-          <Example
-            key={template.filename}
-            template={template}
-            category={category}
-            subCategory={subCategory}
-          />
-        ))}
-      </x.div>
-    </Container>
+            {subCategory.description && (
+              <x.p color={'gray-600'}>{subCategory.description}</x.p>
+            )}
+          </x.div>
+
+          <x.div spaceY={12}>
+            {templates?.map((template) => (
+              <Example
+                key={template.filename}
+                template={template}
+                category={category}
+                subCategory={subCategory}
+              />
+            ))}
+          </x.div>
+        </Container>
+      </DefaultLayout>
+    </>
   )
 }
 

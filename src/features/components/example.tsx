@@ -44,18 +44,18 @@ export const Example = ({ template, category, subCategory }: ExampleProps) => {
   return (
     <x.div
       h="full"
-      borderRadius="md"
+      borderRadius="xl"
       border="1px solid"
-      borderColor={useColorModeValue('gray-200', 'gray-900')}
+      overflow="auto"
+      borderColor={useColorModeValue('gray-100', 'gray-700')}
       id={template.filename}
     >
-      <x.div color="green-599">
+      <x.div color="text">
         <x.div
           display="flex"
           alignItems="center"
           justifyContent="space-between"
           flexDirection={{ _: 'column', md: 'row' }}
-          border="1px solid"
           py={3}
           px={4}
         >
@@ -66,7 +66,10 @@ export const Example = ({ template, category, subCategory }: ExampleProps) => {
           <x.div display="flex" alignItems="center" spaceX={4}>
             {options.map((option) => (
               <Fragment key={option.label}>
-                <x.label htmlFor={`${option.label}-${option.width}`}>
+                <x.label
+                  htmlFor={`${option.label}-${option.width}`}
+                  cursor="pointer"
+                >
                   <x.input
                     id={`${option.label}-${option.width}`}
                     type="radio"
@@ -115,33 +118,29 @@ export const Example = ({ template, category, subCategory }: ExampleProps) => {
         </x.div>
 
         <x.div borderRadius="2xl">
-          {tabIndex === 0 && (
-            <x.div
-              display="flex"
-              w="full"
-              justifyContent="center"
-              alignItems="center"
-              overflow="hidden"
-            >
-              <x.div w={viewWidth}>
-                <ResizableFrame
-                  category={category}
-                  subCategory={subCategory}
-                  template={template}
-                />
-              </x.div>
-            </x.div>
-          )}
-
-          {tabIndex === 1 && (
-            <x.div>
-              <CodeSample
+          <x.div
+            display={tabIndex === 0 ? 'flex' : 'none'}
+            w="full"
+            justifyContent="center"
+            alignItems="center"
+            overflow="hidden"
+          >
+            <x.div w={viewWidth}>
+              <ResizableFrame
                 category={category}
                 subCategory={subCategory}
                 template={template}
               />
             </x.div>
-          )}
+          </x.div>
+
+          <x.div display={tabIndex === 1 ? 'block' : 'none'}>
+            <CodeSample
+              category={category}
+              subCategory={subCategory}
+              template={template}
+            />
+          </x.div>
         </x.div>
       </x.div>
     </x.div>

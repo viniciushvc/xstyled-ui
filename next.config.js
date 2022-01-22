@@ -13,6 +13,9 @@ module.exports = withPWA({
     dest: 'public',
     disable: !isProd
   },
+  images: {
+    domains: ['images.unsplash.com', 'source.unsplash.com']
+  },
   webpack: (config, { dev, isServer }) => {
     // only in production build
     if (!dev && !isServer) {

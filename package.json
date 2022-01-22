@@ -11,6 +11,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "postinstall": "husky install",
+    "prepare": "husky install",
+    "postbuild": "next-sitemap",
     "lint": "eslint src --max-warnings=0"
   },
   "husky": {
@@ -22,33 +25,34 @@
   "dependencies": {
     "@xstyled/styled-components": "^3.5.1",
     "next": "12.0.8",
+    "next-pwa": "5.4.4",
     "next-seo": "^4.29.0",
+    "nextjs-progressbar": "^0.0.13",
+    "preact": "^10.6.4",
+    "preact-render-to-string": "^5.1.19",
     "raw-loader": "^4.0.2",
     "re-resizable": "^6.9.1",
     "react": "17.0.2",
     "react-code-blocks": "^0.0.8",
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1",
-    "styled-components": "^5.3.3",
-    "nextjs-progressbar": "^0.0.13",
-    "preact": "^10.6.4",
-    "preact-render-to-string": "^5.1.19",
-    "next-pwa": "5.4.4"
+    "styled-components": "^5.3.3"
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.21",
+    "@babel/core": "^7.16.12",
     "@types/react": "^17.0.38",
-    "@babel/core": "^7.16.10",
-    "husky": "^7.0.4",
-    "typescript": "^4.5.4",
+    "@types/styled-components": "^5.1.21",
+    "@typescript-eslint/eslint-plugin": "^5.10.0",
+    "@typescript-eslint/parser": "^5.10.0",
     "eslint": "^8.7.0",
     "eslint-config-next": "^12.0.8",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "@typescript-eslint/eslint-plugin": "^5.10.0",
-    "@typescript-eslint/parser": "^5.10.0",
-    "prettier": "^2.5.1"
+    "husky": "^7.0.4",
+    "next-sitemap": "^1.9.12",
+    "prettier": "^2.5.1",
+    "typescript": "^4.5.5"
   }
 }

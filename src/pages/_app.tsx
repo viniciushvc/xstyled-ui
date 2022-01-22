@@ -8,7 +8,10 @@ import {
   ColorModeProvider
 } from '@xstyled/styled-components'
 
-import { DefaultLayout } from '@/layout/default'
+import { DefaultSeo } from 'next-seo'
+import { SEO } from '../../next-seo.config'
+
+import NextNProgress from 'nextjs-progressbar'
 
 import { theme } from 'styles/theme'
 import { GlobalStyles } from 'styles/global'
@@ -28,9 +31,18 @@ const AppPage = ({ Component, pageProps }: AppProps) => {
           <meta name="description" content="xStyled UI" />
         </Head>
 
-        <DefaultLayout>
-          <Component {...pageProps} />
-        </DefaultLayout>
+        <DefaultSeo {...SEO} />
+
+        <NextNProgress
+          color="#f43f5e"
+          startPosition={0.3}
+          stopDelayMs={200}
+          height={3}
+          showOnShallow={true}
+          options={{ showSpinner: false }}
+        />
+
+        <Component {...pageProps} />
       </ColorModeProvider>
     </ThemeProvider>
   )

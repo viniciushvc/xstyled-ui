@@ -1,13 +1,22 @@
 import { x } from '@xstyled/styled-components'
 
+import { useColorModeValue } from '@/hooks/use-color-mode'
+
 export default function Sample() {
+  const borderColor = useColorModeValue('gray-100', 'gray-700')
+
   return (
     <x.div display="flex" justifyContent="center" alignItems="center">
       <x.div w="full" maxW="350px" py={6}>
-        <x.div boxShadow="md" borderRadius="md" overflow="auto">
+        <x.div
+          border="1px solid"
+          borderColor={borderColor}
+          borderRadius="md"
+          overflow="auto"
+        >
           <x.div>
             <x.img
-              src="https://picsum.photos/200/300"
+              src="https://source.unsplash.com/random"
               w="full"
               h="200"
               backgroundSize="cover"
