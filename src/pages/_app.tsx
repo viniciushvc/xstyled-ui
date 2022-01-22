@@ -2,20 +2,18 @@ import type { AppProps } from 'next/app'
 
 import Head from 'next/head'
 
-// import { ChakraProvider } from '@chakra-ui/react'
-
-// import { theme as oldTheme } from '../theme'
-
 import {
   ThemeProvider,
   Preflight,
   ColorModeProvider
 } from '@xstyled/styled-components'
 
+import { DefaultLayout } from '@/layout/default'
+
 import { theme } from 'styles/theme'
 import { GlobalStyles } from 'styles/global'
 
-function App({ Component, pageProps }: AppProps) {
+const AppPage = ({ Component, pageProps }: AppProps) => {
   return (
     <ThemeProvider theme={theme}>
       <ColorModeProvider>
@@ -30,10 +28,12 @@ function App({ Component, pageProps }: AppProps) {
           <meta name="description" content="xStyled UI" />
         </Head>
 
-        <Component {...pageProps} />
+        <DefaultLayout>
+          <Component {...pageProps} />
+        </DefaultLayout>
       </ColorModeProvider>
     </ThemeProvider>
   )
 }
 
-export default App
+export default AppPage

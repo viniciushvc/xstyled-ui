@@ -5,36 +5,8 @@ export const cards: SubCategory = {
   id: 'cards',
   children: [
     {
-      name: 'Social User Profile with Image',
-      filename: 'socialProfileWithImage'
-    },
-    {
-      name: 'Social User Profile Simple',
-      filename: 'socialProfileSimple'
-    },
-    {
-      name: 'Product Simple',
-      filename: 'productSimple'
-    },
-    {
-      name: 'Product with Add to Cart',
-      filename: 'productAddToCart'
-    },
-    {
-      name: 'Pricing',
-      filename: 'pricing'
-    },
-    {
-      name: 'Blog Post with Image',
-      filename: 'blogPostWithImage'
-    },
-    {
-      name: 'Simple Cookies prefrence',
-      filename: 'simpleCookiePreference'
-    },
-    {
-      name: 'Social User Profile Horizontal',
-      filename: 'socialUserProfileHorizontal'
+      name: 'Sample card',
+      filename: 'sample'
     }
   ]
 }

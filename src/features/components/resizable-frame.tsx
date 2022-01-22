@@ -1,9 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
-import { Box, useColorMode } from '@chakra-ui/react'
+
+import { useColorMode, x } from '@xstyled/styled-components'
+
 import { Resizable } from 're-resizable'
 
 import { getExampleUrl } from '@/utils/getExampleUrl'
-import { Category, SubCategory, Template } from '../data/types'
+
+import { Category, SubCategory, Template } from '../../data/types'
 
 type IframeProps = {
   template: Template
@@ -11,7 +14,7 @@ type IframeProps = {
   subCategory: SubCategory
 }
 
-const MIN_HEIGHT = 222
+const MIN_HEIGHT = 300
 
 export const ResizableFrame = ({
   template,
@@ -19,7 +22,7 @@ export const ResizableFrame = ({
   subCategory
 }: IframeProps) => {
   const ref = useRef<HTMLIFrameElement>(null)
-  const { colorMode } = useColorMode()
+  const [colorMode] = useColorMode()
   const [height, setHeight] = useState<number | undefined>(undefined)
   const [exampleUrl, setExampleUrl] = useState('')
 
@@ -42,22 +45,22 @@ export const ResizableFrame = ({
     height !== undefined && height >= MIN_HEIGHT ? height : MIN_HEIGHT
 
   return (
-    <Box bg={'gray.500'}>
+    <x.div bg="gray-500">
       <Resizable
-        bounds={'parent'}
-        minWidth={250}
+        bounds="parent"
+        minWidth={MIN_HEIGHT}
         minHeight={getHeight()}
         maxHeight={getHeight()}
       >
-        <iframe
-          loading={'lazy'}
-          width={'100%'}
-          height={getHeight()}
+        <x.iframe
+          ref={ref}
+          w="full"
+          h={getHeight()}
           src={exampleUrl}
           onLoad={syncHeight}
-          ref={ref}
+          loading="lazy"
         />
       </Resizable>
-    </Box>
+    </x.div>
   )
 }

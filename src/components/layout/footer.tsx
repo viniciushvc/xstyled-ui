@@ -1,8 +1,8 @@
 import { x } from '@xstyled/styled-components'
 
-import { useColorModeValue } from 'hooks/use-color-mode'
+import { useColorModeValue } from '@/hooks/use-color-mode'
 
-import { Container } from '@/components/container'
+import { Container } from 'components/layout/container'
 
 export const Footer = () => {
   const bgColor = useColorModeValue('gray-100', 'gray-900')

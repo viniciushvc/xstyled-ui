@@ -1,29 +1,36 @@
-import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react'
+import { AnchorHTMLAttributes, ButtonHTMLAttributes, forwardRef } from 'react'
 
 import { x, SystemProps } from '@xstyled/styled-components'
+
+type ButtonTypes = AnchorHTMLAttributes<HTMLAnchorElement> &
+  ButtonHTMLAttributes<HTMLButtonElement>
 
 export type ButtonProps = {
   as?: React.ElementType
 } & SystemProps &
-  AnchorHTMLAttributes<HTMLAnchorElement> &
-  ButtonHTMLAttributes<HTMLButtonElement>
+  ButtonTypes
 
-export const Button = ({ as, children, ...props }: ButtonProps) => {
-  return (
-    <x.button
-      as={as}
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-      h="50px"
-      color="white"
-      bg={{ _: 'primary-500', hover: 'primary-600' }}
-      borderRadius="md"
-      px={5}
-      transition
-      {...props}
-    >
-      {children}
-    </x.button>
-  )
-}
+export const Button = forwardRef<ButtonTypes, ButtonProps>(
+  ({ as, children, ...props }, ref) => {
+    return (
+      <x.button
+        ref={ref}
+        as={as}
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        h="50px"
+        color="white"
+        bg={{ _: 'primary-500', hover: 'primary-600' }}
+        borderRadius="md"
+        px={5}
+        transition
+        {...props}
+      >
+        {children}
+      </x.button>
+    )
+  }
+)
+
+Button.displayName = 'Button'

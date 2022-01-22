@@ -2,9 +2,10 @@ import Link from 'next/link'
 
 import { SystemProps, x } from '@xstyled/styled-components'
 
-import { Container } from '@/components/container'
+import { useColorModeValue } from '@/hooks/use-color-mode'
+
+import { Container } from '@/components/layout/container'
 import { Button } from '@/components/button'
-import { useColorModeValue } from 'hooks/use-color-mode'
 
 export const Hero = ({ ...props }: SystemProps) => {
   return (
@@ -33,13 +34,13 @@ export const Hero = ({ ...props }: SystemProps) => {
           </x.p>
 
           <x.div display="flex" spaceX={{ _: 6, sm: 12 }}>
-            <x.ul color="text" listStyle="inside" spaceY={4}>
+            <x.ul color="text" spaceY={4}>
               <x.li>Responsive Demos</x.li>
               <x.li>Easy Customizable</x.li>
               <x.li>Written in Typescript</x.li>
             </x.ul>
 
-            <x.ul color="text" listStyle="inside" spaceY={4}>
+            <x.ul color="text" spaceY={4}>
               <x.li>100% Open Source</x.li>
               <x.li>1 Templates</x.li>
               <x.li>2 Categories</x.li>

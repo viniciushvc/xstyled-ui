@@ -1,5 +1,6 @@
 import { x } from '@xstyled/styled-components'
-import { Container } from './container'
+
+import { Container } from '@/components/layout/container'
 
 const STEPS = [
   {

@@ -1,10 +1,13 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
-import { Stack, Heading, Text } from '@chakra-ui/react'
 
-import { DocsLayout } from '@/layout/DocsLayout'
-import { Example } from '@/components/Example'
+import { x } from '@xstyled/styled-components'
+
+import { Container } from '@/components/layout/container'
+
+import { Example } from '@/features/components/example'
+
 import { data } from 'data'
 import { Category, SubCategory, Template } from '../data/types'
 
@@ -14,21 +17,24 @@ type PageProps = {
   templates?: Template[]
 }
 
-const Templates: NextPage<PageProps> = ({
+const TemplatesPage: NextPage<PageProps> = ({
   category,
   subCategory,
   templates
 }) => {
   return (
-    <DocsLayout>
-      <Stack mb={10}>
-        <Heading size={'xl'}>{subCategory.name}</Heading>
-        {subCategory.description ? (
-          <Text color={'gray.600'}>{subCategory.description}</Text>
-        ) : null}
-      </Stack>
+    <Container my={20}>
+      <x.div mb={10}>
+        <x.h1 fontSize="3xl" fontWeight="bold">
+          {subCategory.name}
+        </x.h1>
 
-      <Stack spacing={12}>
+        {subCategory.description && (
+          <x.p color={'gray-600'}>{subCategory.description}</x.p>
+        )}
+      </x.div>
+
+      <x.div spaceY={12}>
         {templates?.map((template) => (
           <Example
             key={template.filename}
@@ -37,8 +43,8 @@ const Templates: NextPage<PageProps> = ({
             subCategory={subCategory}
           />
         ))}
-      </Stack>
-    </DocsLayout>
+      </x.div>
+    </Container>
   )
 }
 
@@ -84,4 +90,4 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-export default Templates
+export default TemplatesPage

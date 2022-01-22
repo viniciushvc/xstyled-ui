@@ -4,10 +4,10 @@ import { x } from '@xstyled/styled-components'
 
 import { IoArrowForward } from 'react-icons/io5'
 
-import { useColorModeValue } from 'hooks/use-color-mode'
+import { useColorModeValue } from '@/hooks/use-color-mode'
 
+import { Container } from '@/components/layout/container'
 import { Button } from '@/components/button'
-import { Container } from '@/components/container'
 
 export const ExploreTemplates = () => {
   const bgColor = useColorModeValue('primary-700-a60', 'primary-500-a30')

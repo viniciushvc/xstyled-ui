@@ -1,18 +1,16 @@
-import { AppLayout } from '@/layout/AppLayout'
-
-import { Hero } from '@/components/hero'
-import { GettingStarted } from '@/components/getting-started'
-import { ExploreTemplates } from '@/components/explore-templates'
+import { Hero } from '@/features/home/hero'
+import { GettingStarted } from '@/features/home/getting-started'
+import { ExploreTemplates } from 'features/home/explore-templates'
 
 const HomePage = () => {
   return (
-    <AppLayout>
+    <>
       <Hero />
 
       <GettingStarted />
 
       <ExploreTemplates />
-    </AppLayout>
+    </>
   )
 }
 
