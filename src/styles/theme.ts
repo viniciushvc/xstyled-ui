@@ -14,9 +14,9 @@ export const theme = {
       dark: {
         bg: defaultTheme.colors['gray-800'],
         inverseBg: '#fff',
-        text: '#dfdfdf',
-        inverseText: '#333'
-      }
-    }
-  }
+        text: '#efefef',
+        inverseText: '#333',
+      },
+    },
+  },
 }

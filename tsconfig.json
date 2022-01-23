@@ -20,7 +20,9 @@
       "@/layout/*": ["layout/*"],
       "@/features/*": ["features/*"],
       "@/hooks/*": ["hooks/*"],
-      "@/data/*": ["data/*"]
+      "@/data/*": ["data/*"],
+      "@/models": ["models/index"],
+      "@/code-samples": ["code-samples/index"]
     },
     "incremental": true
   },

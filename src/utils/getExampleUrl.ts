@@ -1,9 +1,5 @@
-import { Category, SubCategory, Template } from '../data/types'
+import { Category, Template } from '@/models'
 
-export const getExampleUrl = (
-  category: Category,
-  subCategory: SubCategory,
-  template: Template
-) => {
-  return `/templates/${category.id}/${subCategory.id}/${template.filename}`
+export const getExampleUrl = (category: Category, template: Template) => {
+  return `/templates/${category.id}/${template.filename}`
 }

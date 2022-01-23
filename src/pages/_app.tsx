@@ -5,7 +5,7 @@ import Head from 'next/head'
 import {
   ThemeProvider,
   Preflight,
-  ColorModeProvider
+  ColorModeProvider,
 } from '@xstyled/styled-components'
 
 import { DefaultSeo } from 'next-seo'
@@ -37,7 +37,7 @@ const AppPage = ({ Component, pageProps }: AppProps) => {
         <DefaultSeo {...SEO} />
 
         <NextNProgress
-          color="#f43f5e"
+          color="#e11d48"
           startPosition={0.3}
           stopDelayMs={200}
           height={3}

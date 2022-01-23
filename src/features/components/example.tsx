@@ -9,17 +9,17 @@ import { useColorModeValue } from '@/hooks/use-color-mode'
 import { ResizableFrame } from '@/features/components/resizable-frame'
 import { CodeSample } from '@/features/components/code-sample'
 
-import { Category, SubCategory, Template } from '../../data/types'
+import type { Category, Template } from '@/models'
+import { getSampleCode } from '@/utils/getSampleCode'
 
 type ExampleProps = {
   template: Template
   category: Category
-  subCategory: SubCategory
 }
 
 const TABS = ['Preview', 'Code']
 
-export const Example = ({ template, category, subCategory }: ExampleProps) => {
+export const Example = ({ template, category }: ExampleProps) => {
   const [viewWidth, setviewWidth] = useState('full')
   const [tabIndex, setTabIndex] = useState(0)
 
@@ -27,19 +27,29 @@ export const Example = ({ template, category, subCategory }: ExampleProps) => {
     {
       label: 'smart phone',
       width: '380px',
-      icon: <MdOutlineSmartphone />
+      icon: <MdOutlineSmartphone />,
     },
     {
       label: 'Tablet',
       width: '600px',
-      icon: <MdTabletMac />
+      icon: <MdTabletMac />,
     },
     {
       label: 'PC',
       width: 'full',
-      icon: <MdDesktopMac />
-    }
+      icon: <MdDesktopMac />,
+    },
   ]
+
+  const copyCode = () => {
+    const textarea = document.createElement('textarea')
+    textarea.value = getSampleCode(category.id, template.filename)
+
+    document.body.appendChild(textarea)
+    textarea.select()
+    document.execCommand('copy')
+    document.body.removeChild(textarea)
+  }
 
   return (
     <x.div
@@ -89,7 +99,7 @@ export const Example = ({ template, category, subCategory }: ExampleProps) => {
                 key={tab}
                 h="20px"
                 color="white"
-                bg="primary-500"
+                bg="primary-600"
                 fontSize="xs"
                 fontWeight="medium"
                 borderRadius="full"
@@ -103,17 +113,32 @@ export const Example = ({ template, category, subCategory }: ExampleProps) => {
             <x.button
               h="20px"
               color="white"
-              bg="primary-500"
+              bg="primary-600"
               fontSize="xs"
               fontWeight="medium"
               borderRadius="full"
               px={5}
-              onClick={() => {
-                alert('TODO: copy code to clipboard')
-              }}
+              onClick={copyCode}
             >
               Copy
             </x.button>
+
+            <x.a
+              href={`/templates/${category.id}/${template.filename}`}
+              target="_blank"
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+              h="20px"
+              color="white"
+              bg="primary-600"
+              fontSize="xs"
+              fontWeight="medium"
+              borderRadius="full"
+              px={5}
+            >
+              Fullscreen
+            </x.a>
           </x.div>
         </x.div>
 
@@ -126,20 +151,12 @@ export const Example = ({ template, category, subCategory }: ExampleProps) => {
             overflow="hidden"
           >
             <x.div w={viewWidth}>
-              <ResizableFrame
-                category={category}
-                subCategory={subCategory}
-                template={template}
-              />
+              <ResizableFrame category={category} template={template} />
             </x.div>
           </x.div>
 
           <x.div display={tabIndex === 1 ? 'block' : 'none'}>
-            <CodeSample
-              category={category}
-              subCategory={subCategory}
-              template={template}
-            />
+            <CodeSample category={category} template={template} />
           </x.div>
         </x.div>
       </x.div>

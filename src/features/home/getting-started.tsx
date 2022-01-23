@@ -5,16 +5,16 @@ import { Container } from '@/components/layout/container'
 const STEPS = [
   {
     title: 'Find your template',
-    text: 'Every template is embedded within an iframe, so you can easily check what they look like and test the responsive behaviour.'
+    text: 'Every template is embedded within an iframe, so you can easily check what they look like and test the responsive behaviour.',
   },
   {
     title: 'Copy the code',
-    text: 'Click the code tab to see the actual source code of the template. Copy and paste it into your project and adjust it to your needs.'
+    text: 'Click the code tab to see the actual source code of the template. Copy and paste it into your project and adjust it to your needs.',
   },
   {
     title: 'Enjoy your free time',
-    text: "You've just saved yourself a bunch of time not building the same stuff over and over again. Enjoy your free time, and build business features"
-  }
+    text: "You've just saved yourself a bunch of time not building the same stuff over and over again. Enjoy your free time, and build business features",
+  },
 ]
 
 export const GettingStarted = () => {
@@ -53,7 +53,7 @@ export const GettingStarted = () => {
                 display="flex"
                 w="40px"
                 h="40px"
-                bg="primary-500"
+                bg="primary-600"
                 color="white"
                 fontWeight="bold"
                 alignItems="center"

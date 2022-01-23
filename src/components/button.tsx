@@ -21,7 +21,7 @@ export const Button = forwardRef<ButtonTypes, ButtonProps>(
         alignItems="center"
         h="50px"
         color="white"
-        bg={{ _: 'primary-500', hover: 'primary-600' }}
+        bg={{ _: 'primary-600', hover: 'primary-700' }}
         borderRadius="md"
         px={5}
         transition
@@ -30,7 +30,7 @@ export const Button = forwardRef<ButtonTypes, ButtonProps>(
         {children}
       </x.button>
     )
-  }
+  },
 )
 
 Button.displayName = 'Button'

@@ -2,7 +2,7 @@ import { useColorMode } from '@xstyled/styled-components'
 
 export function useColorModeValue<TLight = unknown, TDark = unknown>(
   light: TLight,
-  dark: TDark
+  dark: TDark,
 ) {
   const [colorMode] = useColorMode()
 

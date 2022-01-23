@@ -10,13 +10,11 @@ import { Container } from '@/components/layout/container'
 import { Button } from '@/components/button'
 
 export const ExploreTemplates = () => {
-  const bgColor = useColorModeValue('primary-700-a60', 'primary-500-a30')
-
   return (
     <x.div>
       <Container py={{ _: 14, sm: 20, md: 32 }}>
         <x.div
-          bg={bgColor}
+          bg={useColorModeValue('primary-700-a60', 'primary-600-a30')}
           borderRadius="xl"
           color="white"
           px={{ _: 4, md: 10 }}

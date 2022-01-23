@@ -24,7 +24,7 @@ export const Hero = ({ ...props }: SystemProps) => {
             fontWeight="bold"
             maxW="2xl"
           >
-            <x.u color="primary-500">Production-ready</x.u> xStyled UI for
+            <x.u color="primary-600">Production-ready</x.u> xStyled UI for
             developers
           </x.h2>
 

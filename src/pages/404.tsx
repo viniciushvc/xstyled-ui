@@ -9,8 +9,6 @@ import { useColorModeValue } from '@/hooks/use-color-mode'
 import { Button } from '@/components/button'
 
 export const NotFoundPage = () => {
-  const bgColor = useColorModeValue('gray-200', 'gray-900')
-
   return (
     <>
       <NextSeo title="Not Found" />
@@ -27,7 +25,7 @@ export const NotFoundPage = () => {
           alignItems="center"
           textAlign="center"
           maxW="500px"
-          bg={bgColor}
+          bg={useColorModeValue('gray-200', 'gray-900')}
           borderRadius="xl"
           spaceY={5}
           flexDirection="column"

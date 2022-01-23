@@ -4,14 +4,14 @@ import { x } from '@xstyled/styled-components'
 
 import { useColorModeValue } from '@/hooks/use-color-mode'
 
+import { Logo } from '@/components/logo'
 import { ToggleTheme } from '@/components/toggle-theme'
+import { Container } from '@/components/layout/container'
 
 export const Header = () => {
-  const bgColor = useColorModeValue('gray-100', 'gray-900')
-
   return (
-    <x.header bg={bgColor}>
-      <x.div container mx="auto" px={3}>
+    <x.header bg={useColorModeValue('gray-100', 'gray-900')}>
+      <Container>
         <x.nav
           display="flex"
           h="80px"
@@ -20,9 +20,7 @@ export const Header = () => {
         >
           <Link href="/" passHref>
             <x.a color="text">
-              <x.span fontSize="xl" fontWeight="medium">
-                xStyled UI
-              </x.span>
+              <Logo />
             </x.a>
           </Link>
 
@@ -34,7 +32,7 @@ export const Header = () => {
           >
             <x.li fontWeight="medium">
               <Link href="/" passHref>
-                <x.a color={{ _: 'currentColor', hover: 'primary-500' }}>
+                <x.a color={{ _: 'currentColor', hover: 'primary-700' }}>
                   Home
                 </x.a>
               </Link>
@@ -42,7 +40,7 @@ export const Header = () => {
 
             <x.li fontWeight="medium">
               <Link href="/components" passHref>
-                <x.a color={{ _: 'currentColor', hover: 'primary-500' }}>
+                <x.a color={{ _: 'currentColor', hover: 'primary-700' }}>
                   Components
                 </x.a>
               </Link>
@@ -50,7 +48,7 @@ export const Header = () => {
 
             <x.li fontWeight="medium">
               <Link href="/playground" passHref>
-                <x.a color={{ _: 'currentColor', hover: 'primary-500' }}>
+                <x.a color={{ _: 'currentColor', hover: 'primary-700' }}>
                   Playground
                 </x.a>
               </Link>
@@ -61,7 +59,7 @@ export const Header = () => {
                 href="https://github.com/gregberge/xstyled"
                 target="_blank"
                 rel="noopener noreferrer"
-                color={{ _: 'currentColor', hover: 'primary-500' }}
+                color={{ _: 'currentColor', hover: 'primary-700' }}
               >
                 Github
               </x.a>
@@ -72,7 +70,7 @@ export const Header = () => {
             </x.li>
           </x.ul>
         </x.nav>
-      </x.div>
+      </Container>
     </x.header>
   )
 }

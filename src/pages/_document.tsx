@@ -3,12 +3,12 @@ import Document, {
   Head,
   Main,
   NextScript,
-  DocumentContext
+  DocumentContext,
 } from 'next/document'
 
 import {
   getColorModeInitScriptElement,
-  ServerStyleSheet
+  ServerStyleSheet,
 } from '@xstyled/styled-components'
 
 export default class _Document extends Document {
@@ -22,7 +22,7 @@ export default class _Document extends Document {
           enhanceApp: (App) =>
             function enhance(props) {
               return sheet.collectStyles(<App {...props} />)
-            }
+            },
         })
 
       const initialProps = await Document.getInitialProps(ctx)
@@ -33,7 +33,7 @@ export default class _Document extends Document {
             {initialProps.styles}
             {sheet.getStyleElement()}
           </>
-        )
+        ),
       }
     } finally {
       sheet.seal()
