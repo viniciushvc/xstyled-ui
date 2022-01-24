@@ -19,4 +19,9 @@ export const theme = {
       },
     },
   },
+  fontFamilies: {
+    mono: `Asap, ${defaultTheme.fonts.mono}`,
+    serif: `Asap, ${defaultTheme.fonts.serif}`,
+    sans: `Asap, ${defaultTheme.fonts.sans}`,
+  },
 }
