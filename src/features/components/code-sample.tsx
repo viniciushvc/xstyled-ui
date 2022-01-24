@@ -2,7 +2,7 @@
 
 import { x } from '@xstyled/styled-components'
 
-import { CodeBlock, a11yDark } from 'react-code-blocks'
+import { CodeBlock, atomOneDark } from 'react-code-blocks'
 
 import type { Template, Category } from '@/models'
 
@@ -21,7 +21,7 @@ export const CodeSample = ({ template, category }: CodeSampleProps) => {
       <CodeBlock
         text={code}
         language="tsx"
-        theme={a11yDark}
+        theme={atomOneDark}
         showLineNumbers={false}
       />
     </x.div>
