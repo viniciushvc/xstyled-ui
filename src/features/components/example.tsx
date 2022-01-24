@@ -4,12 +4,15 @@ import { x } from '@xstyled/styled-components'
 
 import { MdDesktopMac, MdOutlineSmartphone, MdTabletMac } from 'react-icons/md'
 
+import useCopyClipboard from 'react-use-clipboard'
+
+import type { Category, Template } from '@/models'
+
 import { useColorModeValue } from '@/hooks/use-color-mode'
 
 import { ResizableFrame } from '@/features/components/resizable-frame'
 import { CodeSample } from '@/features/components/code-sample'
 
-import type { Category, Template } from '@/models'
 import { getSampleCode } from '@/utils/getSampleCode'
 
 type ExampleProps = {
@@ -22,6 +25,10 @@ const TABS = ['Preview', 'Code']
 export const Example = ({ template, category }: ExampleProps) => {
   const [viewWidth, setviewWidth] = useState('full')
   const [tabIndex, setTabIndex] = useState(0)
+  const componentCode = getSampleCode(category.id, template.filename)
+  const [isCopied, setCopied] = useCopyClipboard(componentCode, {
+    successDuration: 3000,
+  })
 
   const options = [
     {
@@ -40,16 +47,6 @@ export const Example = ({ template, category }: ExampleProps) => {
       icon: <MdDesktopMac />,
     },
   ]
-
-  const copyCode = () => {
-    const textarea = document.createElement('textarea')
-    textarea.value = getSampleCode(category.id, template.filename)
-
-    document.body.appendChild(textarea)
-    textarea.select()
-    document.execCommand('copy')
-    document.body.removeChild(textarea)
-  }
 
   return (
     <x.div
@@ -118,9 +115,9 @@ export const Example = ({ template, category }: ExampleProps) => {
               fontWeight="medium"
               borderRadius="full"
               px={5}
-              onClick={copyCode}
+              onClick={setCopied}
             >
-              Copy
+              {isCopied ? 'Copied 😊' : 'Copy'}
             </x.button>
 
             <x.a
